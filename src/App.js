@@ -2,14 +2,20 @@ import ExpenseItem from '../src/component/expenseItem/expenseItem'
 import './App.css';
 import expenses from '../src/component/expensesData';
 import Card from './component/Card/card';
-
+import NewExpense from './NewExpenses/newExpenses';
 
 function App() {
 
  const expensData =  expenses;
+
+ const addExpensHandler = expense => {
+   console.log('in app.js');
+   console.log(expense);
+ }
 //  console.log(expensData);
   return (
     <Card className="expenses">
+      <NewExpense onAddExpense = {addExpensHandler}/>
       <ExpenseItem 
       title={expensData[0].title}
       amount={expensData[0].amount}
